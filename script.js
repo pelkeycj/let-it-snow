@@ -1,5 +1,7 @@
 walkDOM(document.body);
 
+// based on code from http://is.gd/mwZp7E
+// walk the DOM, attempt to change text nodes
 function walkDOM(node) {
   let child;
   let nextNode;
