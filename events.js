@@ -1,9 +1,7 @@
-chrome.runtime.onMessage.addListener {
+chrome.runtime.onMessage.addListener(
   function (request, sender, sendResponse) {
-    console.log('somewhere');
-    if (request.command == "GET_LOCATION") {
+    if (request.command === "GET_LOCATION") {
       navigator.geolocation.getCurrentPosition (function (position) {
-        console.log('position', position);
         sendResponse ({
           location: {
             latitude: position.coords.latitude,
@@ -11,18 +9,11 @@ chrome.runtime.onMessage.addListener {
           }
         });
       });
-      console.log('frick')
       return true;
     }
-    return false;
-  }
-};
 
-chrome.runtime.onMessage.addListener(
-  function(request, sender, sendResponse) {
-    console.log("wow");
-    if (request.greeting == "hello") {
-      sendResponse({farewell: "goodbye"});
+    else if (request.command === "GET_FORECAST") {
+
     }
   }
 );

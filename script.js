@@ -1,11 +1,11 @@
-/*
-chrome.runtime.sendMessage( {command: "GET_LOCATION"}, function (response) {
-  console.log('requesting...')
-  console.log(response);
-});
-*/
-chrome.runtime.sendMessage({greeting: "hello"}, function(resp) {
-  console.log(resp);
+
+chrome.runtime.sendMessage({command: "GET_LOCATION"}, function(location) {
+  console.log(location);
+  // make request;
+
+  chrome.runtime.sendMessage({command: "GET_FORECAST"}, function(forecast) {
+    console.log(forecast)
+  });
 })
 
 walkDOM(document.body);
