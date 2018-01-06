@@ -1,10 +1,8 @@
 
 chrome.runtime.sendMessage({command: "GET_LOCATION"}, function(location) {
-  console.log(location);
-  // make request;
-
   chrome.runtime.sendMessage({command: "GET_FORECAST"}, function(forecast) {
-    console.log(forecast)
+    console.log(forecast);
+    //TODO hit api --> need to build basic api
   });
 })
 
