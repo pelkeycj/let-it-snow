@@ -1,3 +1,13 @@
+/*
+chrome.runtime.sendMessage( {command: "GET_LOCATION"}, function (response) {
+  console.log('requesting...')
+  console.log(response);
+});
+*/
+chrome.runtime.sendMessage({greeting: "hello"}, function(resp) {
+  console.log(resp);
+})
+
 walkDOM(document.body);
 
 // based on code from http://is.gd/mwZp7E
